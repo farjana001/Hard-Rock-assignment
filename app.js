@@ -14,28 +14,41 @@ document.getElementById('searchBtn').addEventListener('click', function(){
 
 function displaySongDetails(allData){
     let songData = allData.data;
-
+    console.log(songData);
     let songList = [];
     const songListDisplay = document.getElementById('firstTenSong');
+    const singleResult = document.getElementById('singleResult');
     for (let i = 0; i < songData.length; i++) {
         const item = songData[i];
 
         const songTitle = item.title;
+        const albumTitle = item.album.title;
         const artistName = item.artist.name;
-        const songDetails = `Title: ${songTitle} Artist: ${artistName}`
+        const songDetails = `Title: ${songTitle}
+         Album: ${albumTitle}
+         Artist: ${artistName}`
         songList.push(songDetails);
         if (songList.length <= 10) {
-            const li = document.createElement('li');
-            li.innerText = songDetails;
-            songListDisplay.appendChild(li);
+            singleResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
+                                       <div class="col-md-9">
+                                       <h3 class="lyrics-name">${songTitle}</h3>
+                                       <p class="author lead">Album: <span>${albumTitle}</span></p>
+                                       <p class="mt-n3">Artist: <span>${artistName}</span></p>
+                                       </div>
+                                       <div class="col-md-3 text-md-right text-center">
+                                       <button class="btn btn-success">Get Lyrics</button>
+                                       </div>
+                                       </div>`
         };
-    
     };
     document.getElementById('searchInput').addEventListener('click', function(){
-        songListDisplay.innerText = "";
+        singleResult.innerHTML = "";
     })
 };
 
+function getLyrics(){
+    console.log(data);
+}
 
 
 
