@@ -41,14 +41,17 @@ body{
 #lyric-title{
     font-size: 25px;
 }
-#song-lyric{
-    height: 400px;
-    overflow: auto;
-}
 .lyrics-name{
     font-size: 20px;
     padding-top: 10px;
     color: rgb(134, 230, 134);
+}
+#go-back{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: none;
+    width: 100%;
+    max-width: 20%;
 }
 .author{
     font-size: 15px;
@@ -60,10 +63,6 @@ body{
     border: 1.5px solid green;
     border-radius: 50%;
 
-}
-.footer{
-    position: relative;
-    top: 220px;
 }
 footer p>span{
     font-weight: 500;

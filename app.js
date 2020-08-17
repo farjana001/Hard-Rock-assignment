@@ -58,13 +58,17 @@ getLyrics = (songTitle, artistName) => {
         .then(data => displayLyrics(data, songTitle, artistName))
 
         document.getElementById('searchResult').style.display = "none";
-       
+        document.getElementById('go-back').style.display = "block";
+        document.getElementById('go-back').addEventListener('click', () => {
+        document.getElementById('singleLyricsElement').innerText = "";
+       })
 
 }
 
 // Showing the lyrics on the website
  displayLyrics = (data, songTitle, artistName) => {
     document.getElementById('lyric-title').innerText = songTitle;
+
     document.getElementById('artist-name').innerText = '- ' + artistName;
     if(data.lyrics){
         document.getElementById('song-lyric').innerText = data.lyrics;
@@ -74,7 +78,5 @@ getLyrics = (songTitle, artistName) => {
     }
 
 };
-
-
 
     //   *******----------*******---------*******---------******* //
