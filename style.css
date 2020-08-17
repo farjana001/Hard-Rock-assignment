@@ -38,17 +38,12 @@ body{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
 }
-.single-lyrics{
-    margin-top: -30px;
+#lyric-title{
+    font-size: 25px;
 }
-.lyric{
-    position: relative;
-    left: 240px;
-    width: 60%;
-    text-align: center;
-    height: 150px;
+#song-lyric{
+    height: 400px;
     overflow: auto;
-    margin-bottom: 40px;
 }
 .lyrics-name{
     font-size: 20px;
@@ -62,17 +57,20 @@ body{
     color: rgb(192, 190, 190);
 }
 .artist-image{
-    border: 1px solid green;
+    border: 1.5px solid green;
     border-radius: 50%;
 
 }
-
+.footer{
+    position: relative;
+    top: 220px;
+}
 footer p>span{
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
 }
 footer p{
-    color: rgb(223, 235, 223);
+    color: rgba(223, 235, 223, 0.6);
 }
 footer p>span>img{
     height: 25px;

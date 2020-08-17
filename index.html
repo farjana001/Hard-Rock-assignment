@@ -16,33 +16,38 @@
 
 <body>
     <div class="container">
-        <nav class="navbar  navbar-dark my-3">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="Hard Rock Solution">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="images/toggler-icon.svg" alt="">
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
 
-        <main class="content-area">
+<!-- ===Header Section=== -->
+        <header>
+            <nav class="navbar  navbar-dark my-3">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="Hard Rock Solution">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="images/toggler-icon.svg" alt="">
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="#">Action 1</a>
+                                <a class="dropdown-item" href="#">Action 2</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+<!-- ===Main Section===  -->
+        <main>
             <div class="search-bar col-md-6 mx-auto">
                 <h1 class="text-center">Lyrics Search</h1>
                 <div class="search-box my-5">
@@ -51,25 +56,25 @@
                 </div>
             </div>
          
-            <!-- Single Lyrics -->
-            <div id="singleLyricsElement" class="single-lyrics text-center">
-                <h2 id="lyric-title" class="text-success mb-4"></h2>
-                <p id="artist-name" class="text-success font-italic mt-n3"></p>
-                <pre id="song-lyric" class="lyric text-white">
-   
-                </pre>
-            </div>
+        
             <!-- === Fancy results === -->
-            <div id="singleResult" class="search-result col-md-8 mx-auto py-4 mt-n5">
-  
-            </div>
+            <div id="searchResult" class="search-result col-md-8 mx-auto py-4 mt-n5"></div>
+
+                <!-- Single Lyrics -->
+                <div id="singleLyricsElement" class="text-center">
+                    <h2 id="lyric-title" class="text-success mb-3"></h2>
+                    <p id="artist-name" class="text-success font-italic mt-n3"></p>
+                    <pre id="song-lyric" class="lyric text-white"></pre>
+                </div>
         </main>
-        <footer id="footer-element">
-            <p class="text-right mb-n1 mt-5 pt-5"> Powered by lyrics.ovh</p>
-            <p class="text-right">&copy; <span>Hard Rock <img src="favicon.ico" alt=""></span> | 2020</p>
-        </footer>
-    </div>
-    <!-- Optional JavaScript -->
+<!-- ===Footer section=== -->
+<footer class="footer text-right">
+    <p class="mb-n1"> Powered by lyrics.ovh</p>
+    <p >&copy; <span>Hard Rock <img src="favicon.ico" alt=""></span> | 2020</p>
+</footer>
+</div>
+
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -78,5 +83,4 @@
     <!-- Custom Script Here -->
     <script src="app.js"></script>
 </body>
-
 </html>

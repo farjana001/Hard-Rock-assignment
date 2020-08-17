@@ -1,9 +1,6 @@
-// //  https://api.lyrics.ovh/
 
-
-
-
-document.getElementById('searchBtn').addEventListener('click', function(){
+// Fetching API url
+document.getElementById('searchBtn').addEventListener('click', () => {
     var searchInputValue = document.getElementById('searchInput').value;
     fetch(`https://api.lyrics.ovh/suggest/` + searchInputValue)
     .then(res => res.json())
@@ -12,12 +9,13 @@ document.getElementById('searchBtn').addEventListener('click', function(){
     document.getElementById('searchInput').value = "";
 });
 
-function displaySongDetails(allData){
+
+// Getting display song list details 
+displaySongDetails = (allData) => {
     let songData = allData.data;
-    console.log(songData);
+ 
+// getting each item of song list
     let songList = [];
-    const songListDisplay = document.getElementById('firstTenSong');
-    const singleResult = document.getElementById('singleResult');
     for (let i = 0; i < songData.length; i++) {
         const item = songData[i];
 
@@ -27,12 +25,14 @@ function displaySongDetails(allData){
         const artistImg = item.artist.picture_small;
         const songDetails = [];
         songList.push(songDetails);
+
+// showing 10items on the list
+let searchResult = document.getElementById('searchResult');
         if (songList.length <= 10) {
-            singleResult.innerHTML += `<div class="single-result row align-items-center my-2 p-3">
-                                       
+            
+            searchResult.innerHTML += `<div class="single-result row align-items-center my-2 p-3">
                                        <img src="${artistImg}" class="img-fluid artist-image">
                                        <div class="col-md-8">
-                                       
                                        <h3 class="lyrics-name">${songTitle}</h3>
                                        <p class="author lead">Album: <span>${albumTitle}</span></p>
                                        <p class="author lead mt-n3">Artist: <span>${artistName}</span></p>
@@ -43,19 +43,27 @@ function displaySongDetails(allData){
                                        </div>`
         };
     };
-    document.getElementById('searchInput').addEventListener('click', function(){
-        singleResult.innerHTML = "";
+
+// Making the display list empty after clicking the input field
+    document.getElementById('searchInput').addEventListener('click', () => {
         document.getElementById('singleLyricsElement').innerText = "";
     })
 };
 
-function getLyrics(songTitle, artistName){
+
+// Fetching the lyrics of songs
+getLyrics = (songTitle, artistName) => {
     fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
         .then(res => res.json())
         .then(data => displayLyrics(data, songTitle, artistName))
+
+        document.getElementById('searchResult').style.display = "none";
+       
+
 }
 
-function displayLyrics(data, songTitle, artistName){
+// Showing the lyrics on the website
+ displayLyrics = (data, songTitle, artistName) => {
     document.getElementById('lyric-title').innerText = songTitle;
     document.getElementById('artist-name').innerText = '- ' + artistName;
     if(data.lyrics){
@@ -69,4 +77,4 @@ function displayLyrics(data, songTitle, artistName){
 
 
 
-      
+    //   *******----------*******---------*******---------******* //
