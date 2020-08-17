@@ -24,14 +24,18 @@ function displaySongDetails(allData){
         const songTitle = item.title;
         const albumTitle = item.album.title;
         const artistName = item.artist.name;
+        const artistImg = item.artist.picture_small;
         const songDetails = [];
         songList.push(songDetails);
         if (songList.length <= 10) {
-            singleResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
-                                       <div class="col-md-9">
+            singleResult.innerHTML += `<div class="single-result row align-items-center my-2 p-3">
+                                       
+                                       <img src="${artistImg}" class="img-fluid artist-image">
+                                       <div class="col-md-8">
+                                       
                                        <h3 class="lyrics-name">${songTitle}</h3>
                                        <p class="author lead">Album: <span>${albumTitle}</span></p>
-                                       <p class="mt-n3">Artist: <span>${artistName}</span></p>
+                                       <p class="author lead mt-n3">Artist: <span>${artistName}</span></p>
                                        </div>
                                        <div class="col-md-3 text-md-right text-center">
                                        <a href="#" onclick="getLyrics('${songTitle}', '${artistName}')" class="btn btn-success">Get Lyrics</a>
@@ -52,7 +56,6 @@ function getLyrics(songTitle, artistName){
 }
 
 function displayLyrics(data, songTitle, artistName){
-
     document.getElementById('lyric-title').innerText = songTitle;
     document.getElementById('artist-name').innerText = '- ' + artistName;
     if(data.lyrics){

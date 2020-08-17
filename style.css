@@ -38,4 +38,44 @@ body{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
 }
+.single-lyrics{
+    margin-top: -30px;
+}
+.lyric{
+    position: relative;
+    left: 240px;
+    width: 60%;
+    text-align: center;
+    height: 150px;
+    overflow: auto;
+    margin-bottom: 40px;
+}
+.lyrics-name{
+    font-size: 20px;
+    padding-top: 10px;
+    color: rgb(134, 230, 134);
+}
+.author{
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgb(192, 190, 190);
+}
+.artist-image{
+    border: 1px solid green;
+    border-radius: 50%;
+
+}
+
+footer p>span{
+    font-weight: 500;
+    font-size: 18px;
+}
+footer p{
+    color: rgb(223, 235, 223);
+}
+footer p>span>img{
+    height: 25px;
+    width: 25px;
+}
 
