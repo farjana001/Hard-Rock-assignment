@@ -34,20 +34,35 @@ function displaySongDetails(allData){
                                        <p class="mt-n3">Artist: <span>${artistName}</span></p>
                                        </div>
                                        <div class="col-md-3 text-md-right text-center">
-                                       <button class="btn btn-success">Get Lyrics</button>
+                                       <a href="#" onclick="getLyrics('${songTitle}', '${artistName}')" class="btn btn-success">Get Lyrics</a>
                                        </div>
                                        </div>`
         };
     };
     document.getElementById('searchInput').addEventListener('click', function(){
         singleResult.innerHTML = "";
+        document.getElementById('singleLyricsElement').innerText = "";
     })
 };
 
-// function getLyrics(){
-//     console.log("Search lyrics for", song);
-// }
+function getLyrics(songTitle, artistName){
+    fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
+        .then(res => res.json())
+        .then(data => displayLyrics(data, songTitle, artistName))
+}
 
+function displayLyrics(data, songTitle, artistName){
+
+    document.getElementById('lyric-title').innerText = songTitle;
+    document.getElementById('artist-name').innerText = '- ' + artistName;
+    if(data.lyrics){
+        document.getElementById('song-lyric').innerText = data.lyrics;
+    }
+    else{
+        document.getElementById('song-lyric').innerText = "Sorry! Your searched lyrics is not found";
+    }
+
+};
 
 
 
