@@ -24,9 +24,7 @@ function displaySongDetails(allData){
         const songTitle = item.title;
         const albumTitle = item.album.title;
         const artistName = item.artist.name;
-        const songDetails = `Title: ${songTitle}
-         Album: ${albumTitle}
-         Artist: ${artistName}`
+        const songDetails = [];
         songList.push(songDetails);
         if (songList.length <= 10) {
             singleResult.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
@@ -46,9 +44,9 @@ function displaySongDetails(allData){
     })
 };
 
-function getLyrics(){
-    console.log(data);
-}
+// function getLyrics(){
+//     console.log("Search lyrics for", song);
+// }
 
 
 
