@@ -1,4 +1,6 @@
-
+var loading = `<div class="spinner-border text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>`
 // Fetching API url
 document.getElementById('searchBtn').addEventListener('click', () => {
     var searchInputValue = document.getElementById('searchInput').value;
@@ -78,5 +80,8 @@ getLyrics = (songTitle, artistName) => {
     }
 
 };
-
+// to reload page
+function pageReload() {
+    location.reload();
+  }
     //   *******----------*******---------*******---------******* //
