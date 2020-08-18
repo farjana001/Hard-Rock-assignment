@@ -1,8 +1,7 @@
-var loading = `<div class="spinner-border text-light" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>`
+
 // Fetching API url
 document.getElementById('searchBtn').addEventListener('click', () => {
+    
     var searchInputValue = document.getElementById('searchInput').value;
     fetch(`https://api.lyrics.ovh/suggest/` + searchInputValue)
     .then(res => res.json())
@@ -10,7 +9,6 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     
     document.getElementById('searchInput').value = "";
 });
-
 
 // Getting display song list details 
 displaySongDetails = (allData) => {
@@ -49,6 +47,7 @@ let searchResult = document.getElementById('searchResult');
 // Making the display list empty after clicking the input field
     document.getElementById('searchInput').addEventListener('click', () => {
         document.getElementById('singleLyricsElement').innerText = "";
+        searchResult.innerHTML = "";
     })
 };
 
@@ -84,4 +83,6 @@ getLyrics = (songTitle, artistName) => {
 function pageReload() {
     location.reload();
   }
+
+
     //   *******----------*******---------*******---------******* //
