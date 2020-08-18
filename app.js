@@ -1,7 +1,6 @@
 
 // Fetching API url
 document.getElementById('searchBtn').addEventListener('click', () => {
-    
     var searchInputValue = document.getElementById('searchInput').value;
     fetch(`https://api.lyrics.ovh/suggest/` + searchInputValue)
     .then(res => res.json())
@@ -9,6 +8,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     
     document.getElementById('searchInput').value = "";
 });
+
 
 // Getting display song list details 
 displaySongDetails = (allData) => {
