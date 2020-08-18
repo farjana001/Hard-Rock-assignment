@@ -1,14 +1,17 @@
 
+document.getElementById('singleLyricsElement').style.display = 'none';
+
 // Fetching API url
 document.getElementById('searchBtn').addEventListener('click', () => {
-    
     var searchInputValue = document.getElementById('searchInput').value;
     fetch(`https://api.lyrics.ovh/suggest/` + searchInputValue)
     .then(res => res.json())
     .then(data => displaySongDetails(data));
     
+    document.getElementById('display-line').style.display = 'none';
     document.getElementById('searchInput').value = "";
 });
+
 
 // Getting display song list details 
 displaySongDetails = (allData) => {
@@ -58,6 +61,8 @@ getLyrics = (songTitle, artistName) => {
         .then(res => res.json())
         .then(data => displayLyrics(data, songTitle, artistName))
 
+        document.getElementById('singleLyricsElement').style.display = 'block';
+        document.getElementById('display-line').style.display = 'none';
         document.getElementById('searchResult').style.display = "none";
         document.getElementById('go-back').style.display = "block";
         document.getElementById('go-back').addEventListener('click', () => {
